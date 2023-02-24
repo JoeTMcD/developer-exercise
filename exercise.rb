@@ -2,7 +2,8 @@
 class Exercise
   # Assume that "str" is a sequence of words separated by spaces.
   # Return a string in which every word in "str" that exceeds 4 characters is replaced with "marklar".
-  # If the word being replaced has a capital first letter, it should instead be replaced with "Marklar".
+  # If the word being replaced has a capital first letter,
+  # it should instead be replaced with "Marklar".
 
  def self.marklar(str) # WORKING!
 	#puts "Marklar Input: #{str}"
@@ -12,10 +13,6 @@ class Exercise
 	return str
  end
 
-
-
-
-
   # Return the sum of all even numbers in the Fibonacci sequence, up to
   # the "nth" term in the sequence
   # eg. the Fibonacci sequence up to 6 terms is (1, 1, 2, 3, 5, 8),
@@ -24,22 +21,22 @@ class Exercise
  def self.even_fibonacci(nth)
 	# TODO: Implement this method
 	puts "Input: #{nth}"
-	count = 0
-	sum = 0
-	even_sum=0
-	while count < nth 
-		count += 1
-		if count.even? then
-			even_sum += count
-		end
-		sum += count
 
-		puts("count = #{count} - sum = #{sum} - even_sum = #{even_sum}" )
-
+	even_sum = 0
+	f = [1, 1]
+	len = f.length
+	puts("f.length = #{f.length} - even_sum = #{even_sum} f= #{f}")
+	
+	while f.length < nth 
+		newnumber = ( f[ (f.length) - 2 ].to_i + f[ (f.length) -1 ].to_i  )
+		f.append(  newnumber )
+ 		if f[ (f.length) - 1 ].to_i.even? then
+ 			even_sum += f[ (f.length) - 1 ].to_i
+ 		end
+		puts("f.length = #{f.length} - even_sum = #{even_sum} f= #{f}")
 	end
-	puts "even_sum = #{even_sum}"
 	return even_sum
  end
-
-
+## self.even_fibonacci(20)
 end #end class Execise
+

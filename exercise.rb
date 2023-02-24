@@ -1,15 +1,11 @@
-#!/usr/bin/ruby
 class Exercise
   # Assume that "str" is a sequence of words separated by spaces.
   # Return a string in which every word in "str" that exceeds 4 characters is replaced with "marklar".
-  # If the word being replaced has a capital first letter,
-  # it should instead be replaced with "Marklar".
+  # If the word being replaced has a capital first letter, it should instead be replaced with "Marklar".
 
- def self.marklar(str) # WORKING!
-	#puts "Marklar Input: #{str}"
+ def self.marklar(str)
 	str.gsub!(/\b[A-Z]{1}[a-z]{4,}\b/, "Marklar")
 	str.gsub!(/\b[a-z]{5,}\b/, "marklar")
-	#puts "Marklar Out: #{str}"
 	return str
  end
 
@@ -19,13 +15,9 @@ class Exercise
   # and the sum of its even numbers is (2 + 8) = 10
   
  def self.even_fibonacci(nth)
-	# TODO: Implement this method
-	puts "Input: #{nth}"
-
 	even_sum = 0
 	f = [1, 1]
 	len = f.length
-	puts("f.length = #{f.length} - even_sum = #{even_sum} f= #{f}")
 	
 	while f.length < nth 
 		newnumber = ( f[ (f.length) - 2 ].to_i + f[ (f.length) -1 ].to_i  )
@@ -33,10 +25,10 @@ class Exercise
  		if f[ (f.length) - 1 ].to_i.even? then
  			even_sum += f[ (f.length) - 1 ].to_i
  		end
-		puts("f.length = #{f.length} - even_sum = #{even_sum} f= #{f}")
 	end
+
 	return even_sum
  end
-## self.even_fibonacci(20)
+
 end #end class Execise
 
